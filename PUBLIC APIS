@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public APIs</title>
+  <style>
+    /* Basic styling for demonstration purposes */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    .api {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .api h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Public APIs</h1>
+  </header>
+  <div class="container">
+    <div id="api-list"></div>
+  </div>
+  <script>
+    // Sample data for demonstration
+    const apis = [
+      { name: 'Weather API', description: 'Get current weather data', category: 'Weather' },
+      { name: 'News API', description: 'Access news articles from various sources', category: 'News' },
+      { name: 'Maps API', description: 'Embed interactive maps into your application', category: 'Maps' }
+      // Add more APIs as needed
+    ];
+
+    // Function to display APIs
+    function displayAPIs() {
+      const apiList = document.getElementById('api-list');
+      apiList.innerHTML = '';
+
+      apis.forEach(api => {
+        const apiDiv = document.createElement('div');
+        apiDiv.classList.add('api');
+        apiDiv.innerHTML = `
+          <h2>${api.name}</h2>
+          <p><strong>Description:</strong> ${api.description}</p>
+          <p><strong>Category:</strong> ${api.category}</p>
+        `;
+        apiList.appendChild(apiDiv);
+      });
+    }
+
+    // Call the function to display APIs
+    displayAPIs();
+  </script>
+</body>
+</html>
